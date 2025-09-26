@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{decorator/main}">
+<head>
+    <title>Trang Chủ | Quản lý Sản phẩm</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Danh sách danh mục</h2>
+                <ul id="category-list" class="list-group">
+                    <li class="list-group-item list-group-item-action active" style="cursor: pointer;" onclick="fetchProducts()">Tất cả sản phẩm</li>
+                </ul>
+            </div>
+
+
+            <div class="col-md-8">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 id="product-list-title" class="mb-0">Tất cả sản phẩm (Sắp xếp theo giá tăng dần)</h2>
+
+                    <button id="btn-new-product" class="btn btn-primary">Thêm sản phẩm mới</button>
+                </div>
+                <div id="product-list" class="row">
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="product-modal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModalLabel">Thêm sản phẩm mới</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="product-form">
+                            <input type="hidden" id="product-id">
+
+                            <div class="mb-3">
+                                <label for="product-title" class="form-label">Tên sản phẩm</label>
+                                <input type="text" class="form-control" id="product-title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="product-price" class="form-label">Giá</label>
+                                <input type="number" class="form-control" id="product-price" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="product-quantity" class="form-label">Số lượng</label>
+                                <input type="number" class="form-control" id="product-quantity" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="product-description" class="form-label">Mô tả</label>
+                                <textarea class="form-control" id="product-description" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="product-user" class="form-label">Người đăng</label>
+                                <select class="form-select" id="product-user" required>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="product-categories" class="form-label">Danh mục (chọn nhiều)</label>
+                                <select class="form-select" id="product-categories" multiple required>
+                                </select>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

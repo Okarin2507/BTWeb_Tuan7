@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">GraphQL
+	Project</title>
+<meta charset="UTF-8">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<header
+			class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+			<a href="/"
+				class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+				<span class="fs-4">GraphQL Project Week7</span>
+			</a>
+		</header>
+
+
+		<main layout:fragment="content">
+			<p>Nội dung mặc định nếu trang con không cung cấp.</p>
+		</main>
+
+		<footer class="py-3 my-4">
+			<p class="text-center text-body-secondary">Lê Ngô Nhựt Tân
+				23110315</p>
+		</footer>
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Script tùy chỉnh của chúng ta -->
+	<script th:src="@{/js/main.js}"></script>
+
+</body>
+</html>
